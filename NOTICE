@@ -2,12 +2,34 @@ mdict-audio NOTICE
 Copyright (c) 2026
 
 This product includes software ported from the mdict-utils project
-(https://github.com/liuyug/mdict-utils), Copyright (c) liuyug, licensed under
-the MIT License. MDict container reading and writing logic under
-mdict_audio/container/ is derived from mdict_utils/base/writemdict.py and
-mdict_utils/base/readmdict.py, which in turn derive from the mdict-analysis
-project (https://bitbucket.org/xwang/mdict-analysis) and the writemdict
-project (https://github.com/zhansliu/writemdict), both MIT licensed.
+(https://github.com/liuyug/mdict-utils), Copyright (c) liuyug.
+
+MDict writing and RIPEMD-128 helper logic under mdict_audio/container/ is
+derived from mdict_utils/base/writemdict.py and mdict_utils/base/ripemd128.py,
+which derive from the writemdict project
+(https://github.com/zhansliu/writemdict). These sources are MIT licensed.
 
 mdict-utils is also used at test time as a fixture generator and independent
 readback judge. It is not a runtime dependency of this package.
+
+Third-party MIT license terms
+-----------------------------
+
+The following MIT License terms apply to the third-party code identified above:
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of
+this software and associated documentation files (the "Software"), to deal in the
+Software without restriction, including without limitation the rights to use,
+copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the
+Software, and to permit persons to whom the Software is furnished to do so,
+subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.

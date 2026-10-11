@@ -258,8 +258,8 @@ the input dictionary can be shared or reproduced with a small sample.
 
 ## License
 
-This project is licensed under the BSD 3-Clause License. See [LICENSE](LICENSE) for
-details.
+Original `mdict-audio` code is licensed under the BSD 3-Clause License. See
+[LICENSE](LICENSE) for details.
 
-Parts of this project include code derived from other open source projects. See
-[NOTICE](NOTICE) for attribution and third-party license details.
+This package also includes MIT-licensed code derived from other open source
+projects. See [NOTICE](NOTICE) for attribution and third-party license details.
