@@ -22,45 +22,59 @@ references, and can verify the generated dictionary family.
 ## Requirements
 
 - Python 3.10+
-- PyAV is recommended for MP3 conversion and decode checks.
+- PyAV is optional and recommended for MP3 conversion and decode checks.
 - `ffmpeg` must be available on `PATH` for OGG output, `--engine ffmpeg`, or
   automatic fallback when PyAV is not installed.
 
 ## Install
 
-Run directly with `uvx`:
+There are two ways to use `mdict-audio`: install it with `pip`, or run it
+directly from PyPI with `uvx`.
+
+### Install with `pip`
+
+Recommended install with PyAV support:
 
 ```bash
-uvx --from "mdict-audio[pyav] @ git+https://github.com/kibaamor/mdict-audio" mdict-audio --help
+pip install "mdict-audio[pyav]"
 ```
 
-Use the same pattern for normal commands:
+Install without PyAV:
 
 ```bash
-uvx --from "mdict-audio[pyav] @ git+https://github.com/kibaamor/mdict-audio" mdict-audio convert path/to/dicts --family oaldpe --to mp3
+pip install mdict-audio
 ```
 
-`uvx` installs the Python package and Python dependencies in an isolated
-temporary environment. It does not install system tools, so install `ffmpeg`
-separately when you need OGG output or the ffmpeg backend.
-
-For local development:
-
-```bash
-python -m pip install -e ".[pyav,test]"
-```
-
-Basic local install without PyAV:
-
-```bash
-python -m pip install -e .
-```
-
-Check the CLI:
+After installation:
 
 ```bash
 mdict-audio --help
 ```
+
+### Run with `uvx`
+
+Recommended one-off run with PyAV support:
+
+```bash
+uvx --from "mdict-audio[pyav]" mdict-audio --help
+```
+
+Run without PyAV:
+
+```bash
+uvx mdict-audio --help
+```
+
+For normal commands with PyAV support, keep the same `uvx --from ...` prefix:
+
+```bash
+uvx --from "mdict-audio[pyav]" mdict-audio convert path/to/dicts --family oaldpe --to mp3
+```
+
+`pip` installs the CLI into your current Python environment. `uvx` uses an
+isolated temporary environment for each run. Neither method installs system
+tools, so install `ffmpeg` separately when you need OGG output or the ffmpeg
+backend.
 
 ## Quick Start
 
@@ -190,8 +204,8 @@ Exit codes:
 | `1` | Verification completed and found problems. |
 | `2` | Command usage or runtime failure. |
 
-A failed verification does not always mean conversion introduced new damage.
-Check whether problems are reported as pre-existing or introduced.
+A failed verification can also reflect damage already present in the source
+dictionary. Compare with the original input or manifest warnings when needed.
 
 ## Backends
 
@@ -230,15 +244,6 @@ mdict-audio convert path/to/dicts --family oaldpe --to ogg
 - Some damaged or unusual audio files may still fail to decode.
 - Missing audio resources are reported but not repaired.
 - Audio conversion improves playback compatibility, not source recording quality.
-
-## Development
-
-Run checks with:
-
-```bash
-python -m pytest tests -q
-python -m ruff check mdict_audio/ tests/
-```
 
 ## Bug Reports
 
