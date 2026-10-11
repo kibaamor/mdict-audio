@@ -1,0 +1,13 @@
+mdict-audio NOTICE
+Copyright (c) 2026
+
+This product includes software ported from the mdict-utils project
+(https://github.com/liuyug/mdict-utils), Copyright (c) liuyug, licensed under
+the MIT License. MDict container reading and writing logic under
+mdict_audio/container/ is derived from mdict_utils/base/writemdict.py and
+mdict_utils/base/readmdict.py, which in turn derive from the mdict-analysis
+project (https://bitbucket.org/xwang/mdict-analysis) and the writemdict
+project (https://github.com/zhansliu/writemdict), both MIT licensed.
+
+mdict-utils is also used at test time as a fixture generator and independent
+readback judge. It is not a runtime dependency of this package.

@@ -1,0 +1,47 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mdict-audio"
+version = "0.1.0"
+description = "Convert audio formats inside MDict dictionary families for playback compatibility"
+requires-python = ">=3.10"
+license = { text = "BSD-3-Clause" }
+
+[project.optional-dependencies]
+test = ["pytest>=8", "mdict-utils>=0.3"]
+pyav = ["av>=12,<20"]
+
+[project.scripts]
+mdict-audio = "mdict_audio.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["mdict_audio*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+target-version = "py310"
+line-length = 88
+
+[tool.ruff.lint]
+select = [
+    "E",
+    "W",
+    "F",
+    "I",
+    "B",
+    "C4",
+    "RET",
+    "A",
+]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = [
+    "ARG001",
+]
+
+[tool.ruff.format]
+quote-style = "double"
