@@ -1,13 +1,47 @@
 [build-system]
-requires = ["setuptools>=68"]
+requires = ["setuptools>=77"]
 build-backend = "setuptools.build_meta"
 
 [project]
 name = "mdict-audio"
 version = "0.1.0"
 description = "Convert audio formats inside MDict dictionary families for playback compatibility"
+readme = "README.md"
 requires-python = ">=3.10"
-license = { text = "BSD-3-Clause" }
+license = "BSD-3-Clause"
+license-files = ["LICENSE", "NOTICE"]
+authors = [
+    { name = "kibaamor" },
+]
+maintainers = [
+    { name = "kibaamor" },
+]
+keywords = [
+    "audio",
+    "dictionary",
+    "mdd",
+    "mdict",
+    "mdx",
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Environment :: Console",
+    "Intended Audience :: End Users/Desktop",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Multimedia :: Sound/Audio :: Conversion",
+    "Topic :: Text Processing :: Linguistic",
+]
+
+[project.urls]
+Homepage = "https://github.com/kibaamor/mdict-audio"
+Repository = "https://github.com/kibaamor/mdict-audio"
+Issues = "https://github.com/kibaamor/mdict-audio/issues"
 
 [project.optional-dependencies]
 test = ["pytest>=8", "mdict-utils>=0.3"]
